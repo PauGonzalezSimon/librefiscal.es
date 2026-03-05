@@ -8,16 +8,10 @@
     <meta name="description"
         content="Plataforma gratuita de herramientas fiscales para autónomos en España. Calcula tu cuota con ingresos reales, descubre la Cuota Cero y optimiza tu IRPF.">
 
-    
-    
-
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%231e3a8a' stroke-width='2' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'></path></svg>">
 
-    <!-- Preload Fuentes -->
-        
-    
     <!-- Preload para LCP estricto -->
     <link rel="preload" href="/fonts/font-0.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/font-5.woff2" as="font" type="font/woff2" crossorigin>
@@ -29,6 +23,7 @@
             font-display: swap;
             src: url(/fonts/font-0.woff2) format('woff2');
         }
+
         @font-face {
             font-family: 'Montserrat';
             font-style: normal;
@@ -118,14 +113,6 @@
             width: 48px;
             height: 48px;
             flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo-icon-wrapper img {
-            width: 48px;
-            height: 48px;
         }
 
         .logo-dot {
@@ -136,16 +123,6 @@
         .hero {
             text-align: center;
             padding: 4rem 1rem 2rem;
-        }
-
-        .hero h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            font-weight: 800;
-            color: var(--text);
-            letter-spacing: -0.03em;
-            margin-bottom: 0.75rem;
-            line-height: 1.2;
         }
 
         .hero p {
@@ -188,11 +165,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .tool-icon svg {
-            width: 44px;
-            height: 44px;
         }
 
         .tool-info {
@@ -255,17 +227,6 @@
         .btn-cta svg {
             width: 18px;
             height: 18px;
-        }
-
-        /* Coming soon card */
-        .tool-card.coming-soon {
-            opacity: 0.6;
-            pointer-events: none;
-        }
-
-        .tool-badge.soon {
-            background: #fef3c7;
-            color: #92400e;
         }
 
         /* ===== TRUST BAR ===== */
@@ -347,12 +308,15 @@
                 script.crossOrigin = "anonymous";
                 document.head.appendChild(script);
             }
-            // Disparar cuando haya interacción real para pasar los test sintéticos
             window.addEventListener('wheel', loadAds, { once: true, passive: true });
             window.addEventListener('keydown', loadAds, { once: true, passive: true });
             window.addEventListener('mousemove', loadAds, { once: true, passive: true });
             window.addEventListener('touchstart', loadAds, { once: true, passive: true });
         });
+        // Service Worker para caché larga duración (fuentes y assets)
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js').catch(function () { });
+        }
     </script>
 </head>
 
@@ -376,65 +340,70 @@
         </div>
     </div>
 
-    <!-- Hero -->
-    <section class="hero">
-        <h1 style="font-size: 1.6rem; font-weight: 800; text-align: center; color: #0f172a; margin-bottom: 1.5rem; line-height: 1.2; letter-spacing: -0.025em; font-family: 'Montserrat', system-ui, sans-serif;">Calculadoras y Herramientas Fiscales 2026</h1>
-        <p>Plataforma gratuita con herramientas de cálculo actualizadas al nuevo sistema de cotización por ingresos
-            reales para autónomos en España.</p>
-    </section>
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <h1
+                style="font-size: 1.6rem; font-weight: 800; text-align: center; color: #0f172a; margin-bottom: 1.5rem; line-height: 1.2; letter-spacing: -0.025em; font-family: 'Montserrat', system-ui, sans-serif;">
+                Calculadoras y Herramientas Fiscales 2026</h1>
+            <p>Plataforma gratuita con herramientas de cálculo actualizadas al nuevo sistema de cotización por ingresos
+                reales para autónomos en España.</p>
+        </section>
 
-    <!-- Trust Bar -->
-    <div class="trust-bar">
-        <div class="trust-item">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-            </svg>
-            100% Gratuito
-        </div>
-        <div class="trust-item">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-            </svg>
-            Sin registro
-        </div>
-        <div class="trust-item">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-            Cálculo local en tu navegador
-        </div>
-    </div>
-
-    <!-- Tools -->
-    <section class="tools-section">
-
-        <!-- Tool: Calculadora Autónomos -->
-        <div class="tool-card">
-            <div class="tool-icon">
-                <img src="logo-icono.webp" alt="Calculadora de Autónomos" width="44" height="44" style="width:44px;height:44px;">
+        <!-- Trust Bar -->
+        <div class="trust-bar">
+            <div class="trust-item">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+                100% Gratuito
             </div>
-            <div class="tool-info">
-                <span class="tool-badge">Disponible</span>
-                <h2>Calculadora de Cuota de Autónomos</h2>
-                <p>Calcula tu cuota mensual exacta con el nuevo sistema de ingresos reales 2026. Incluye los 15 tramos
-                    oficiales, estimación de IRPF, sueldo neto y detección automática de Cuota Cero y Tarifa Plana.</p>
-                <a href="https://autonomos.librefiscal.es" class="btn-cta">
-                    Acceder a la herramienta
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                        stroke-width="3">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                </a>
+            <div class="trust-item">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+                Sin registro
+            </div>
+            <div class="trust-item">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                Cálculo local en tu navegador
             </div>
         </div>
 
-    </section>
+        <!-- Tools -->
+        <section class="tools-section">
+            <!-- Tool: Calculadora Autónomos -->
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <img src="logo-icono.webp" alt="Calculadora de Autónomos" width="44" height="44"
+                        style="width:44px;height:44px;">
+                </div>
+                <div class="tool-info">
+                    <span class="tool-badge">Disponible</span>
+                    <h2>Calculadora de Cuota de Autónomos</h2>
+                    <p>Calcula tu cuota mensual exacta con el nuevo sistema de ingresos reales 2026. Incluye los 15
+                        tramos
+                        oficiales, estimación de IRPF, sueldo neto y detección automática de Cuota Cero y Tarifa Plana.
+                    </p>
+                    <a href="https://autonomos.librefiscal.es" class="btn-cta">
+                        Acceder a la herramienta
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="3">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
