@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página no encontrada — librefiscal.es</title>
+    <meta name="robots" content="noindex">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%231e3a8a' stroke-width='2' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'></path></svg>">
+
+    <!-- Preload fuentes para LCP instantáneo -->
+    <link rel="preload" href="/fonts/font-0.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/font-5.woff2" as="font" type="font/woff2" crossorigin>
+
+    <style>
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(/fonts/font-0.woff2) format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 800;
+            font-display: swap;
+            src: url(/fonts/font-5.woff2) format('woff2');
+        }
+
+        :root {
+            --primary: #1d4ed8;
+            --primary-hover: #1e40af;
+            --action: #f59e0b;
+            --bg: #ffffff;
+            --text: #0f172a;
+            --muted: #475569;
+            --border: #e2e8f0;
+            --radius: 0.75rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ===== HEADER ===== */
+        .header-wrapper {
+            background-color: var(--primary);
+            color: #ffffff;
+            position: relative;
+        }
+
+        .site-header {
+            padding: 1.5rem 1rem;
+            text-align: center;
+        }
+
+        .header-curve {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .header-curve svg {
+            display: block;
+            width: calc(150% + 1.3px);
+            height: 40px;
+        }
+
+        .header-curve .shape-fill {
+            fill: var(--bg);
+        }
+
+        .site-header .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            text-decoration: none;
+            position: relative;
+            z-index: 1;
+            color: #ffffff;
+        }
+
+        .logo-dot {
+            color: var(--action);
+        }
+
+        /* ===== 404 CONTENT ===== */
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .error-container {
+            max-width: 560px;
+        }
+
+        .error-code {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(6rem, 20vw, 9rem);
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            letter-spacing: -0.04em;
+            opacity: 0.15;
+            margin-bottom: -1rem;
+        }
+
+        .error-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 800;
+            color: var(--text);
+            letter-spacing: -0.025em;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .error-desc {
+            font-size: 1.05rem;
+            color: var(--muted);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary);
+            color: #ffffff;
+            padding: 1rem 2rem;
+            border-radius: var(--radius);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 6px -1px rgba(29, 78, 216, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .btn-home:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px -3px rgba(29, 78, 216, 0.4);
+        }
+
+        .btn-home svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            color: var(--muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            margin: 0 0.4rem;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="header-wrapper">
+        <header class="site-header">
+            <a href="/" class="logo">
+                <img src="/logo-icono.webp" alt="" width="48" height="48">
+                <span>LibreFiscal<span class="logo-dot">.</span>es</span>
+            </a>
+        </header>
+        <div class="header-curve" aria-hidden="true">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+    </div>
+
+    <main>
+        <div class="error-container">
+            <p class="error-code" aria-hidden="true">404</p>
+            <h1 class="error-title"
+                style="font-family:'Montserrat',system-ui,sans-serif; font-size:clamp(1.5rem,4vw,2rem); font-weight:800; color:#0f172a; letter-spacing:-0.025em; line-height:1.2;">
+                Página no encontrada</h1>
+            <p class="error-desc">Parece que el enlace que buscas no existe o ha sido movido.</p>
+            <a href="/" class="btn-home">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Volver al Inicio
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            <a href="/aviso-legal.html">Aviso Legal</a> |
+            <a href="/privacidad.html">Política de Privacidad</a> |
+            <a href="/cookies.html">Política de Cookies</a>
+        </p>
+    </footer>
+
+</body>
+
+</html>
