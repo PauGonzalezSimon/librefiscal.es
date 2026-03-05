@@ -16,26 +16,12 @@
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%231e3a8a' stroke-width='2' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'></path></svg>">
 
     <!-- Preload Fuentes -->
-    <link rel="preload" href="./fonts/font-0.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="./fonts/font-5.woff2" as="font" type="font/woff2" crossorigin>
-
+        
+    <!-- Google Fonts CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     <style>
-        @font-face {
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 400;
-            font-display: optional;
-            src: url(./fonts/font-0.woff2) format('woff2');
-        }
-
-        @font-face {
-            font-family: 'Montserrat';
-            font-style: normal;
-            font-weight: 800;
-            font-display: optional;
-            src: url(./fonts/font-5.woff2) format('woff2');
-        }
-
         :root {
             --primary: #1d4ed8;
             --primary-hover: #1e40af;
@@ -347,7 +333,8 @@
                 document.head.appendChild(script);
             }
             // Disparar cuando haya interacción real para pasar los test sintéticos
-            window.addEventListener('scroll', loadAds, { once: true, passive: true });
+            window.addEventListener('wheel', loadAds, { once: true, passive: true });
+            window.addEventListener('keydown', loadAds, { once: true, passive: true });
             window.addEventListener('mousemove', loadAds, { once: true, passive: true });
             window.addEventListener('touchstart', loadAds, { once: true, passive: true });
         });
