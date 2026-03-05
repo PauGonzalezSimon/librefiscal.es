@@ -8,9 +8,9 @@
     <meta name="description"
         content="Plataforma gratuita de herramientas fiscales para autónomos en España. Calcula tu cuota con ingresos reales, descubre la Cuota Cero y optimiza tu IRPF.">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%231e3a8a' stroke-width='2' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'></path></svg>">
+    <!-- Favicon Oficial -->
+    <link rel="icon" type="image/webp" href="/logo-icono.webp">
+    <link rel="apple-touch-icon" href="/logo-icono.webp">
 
     <!-- Preload para LCP estricto -->
     <link rel="preload" href="/fonts/font-0.woff2" as="font" type="font/woff2" crossorigin>
@@ -323,14 +323,15 @@
 <body>
 
     <!-- Header -->
-    <div class="header-wrapper">
-        <header class="site-header">
+    <header class="header-wrapper">
+        <div class="site-header">
             <a href="/" class="logo">
-                <img src="logo-icono.webp" alt="" class="logo-icon-wrapper" width="48" height="48">
+                <img src="/logo-icono.webp" alt="" class="logo-icon-wrapper" width="48" height="48"
+                    fetchpriority="high">
                 <span>LibreFiscal<span class="logo-dot">.</span>es</span>
             </a>
-        </header>
-        <div class="header-curve">
+        </div>
+        <div class="header-curve" aria-hidden="true">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
                 preserveAspectRatio="none">
                 <path
@@ -338,7 +339,7 @@
                     class="shape-fill"></path>
             </svg>
         </div>
-    </div>
+    </header>
 
     <main>
         <!-- Hero -->
@@ -407,11 +408,11 @@
 
     <!-- Footer -->
     <footer>
-        <p>
+        <div class="legal-links">
             <a href="aviso-legal.html">Aviso Legal</a> |
             <a href="privacidad.html">Política de Privacidad</a> |
             <a href="cookies.html">Política de Cookies</a>
-        </p>
+        </div>
         <p class="copy">&copy; 2026 librefiscal.es — Todos los derechos reservados.</p>
     </footer>
 
