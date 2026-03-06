@@ -15,6 +15,7 @@
     <!-- Preload para LCP estricto -->
     <link rel="preload" href="/fonts/font-0.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/font-5.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/logo-icono.webp" as="image" fetchpriority="high">
     <style>
         @font-face {
             font-family: 'Inter';
@@ -119,18 +120,7 @@
             color: var(--action);
         }
 
-        /* ===== HERO ===== */
-        .hero {
-            text-align: center;
-            padding: 4rem 1rem 2rem;
-        }
 
-        .hero p {
-            font-size: 1.15rem;
-            color: var(--muted);
-            max-width: 600px;
-            margin: 0 auto;
-        }
 
         /* ===== TOOLS GRID ===== */
         .tools-section {
@@ -322,8 +312,8 @@
     <header class="header-wrapper">
         <div class="site-header">
             <a href="/" class="logo">
-                <img src="/logo-icono.webp" alt="" class="logo-icon-wrapper" width="48" height="48"
-                    fetchpriority="high">
+                <img src="/logo-icono.webp" alt="Logo LibreFiscal" class="logo-icon-wrapper" width="48" height="48"
+                    fetchpriority="high" loading="eager">
                 <span>LibreFiscal<span class="logo-dot">.</span>es</span>
             </a>
         </div>
@@ -339,11 +329,12 @@
 
     <main>
         <!-- Hero -->
-        <section class="hero">
+        <section class="hero" style="text-align: center; padding: 4rem 1rem 2rem;">
             <h1
                 style="font-size: 1.6rem; font-weight: 800; text-align: center; color: #0f172a; margin-bottom: 1.5rem; line-height: 1.2; letter-spacing: -0.025em; font-family: 'Montserrat', system-ui, sans-serif;">
                 Calculadoras y Herramientas Fiscales 2026</h1>
-            <p>Plataforma gratuita con herramientas de cálculo actualizadas al nuevo sistema de cotización por ingresos
+            <p style="font-size: 1.15rem; color: #475569; max-width: 600px; margin: 0 auto;">Plataforma gratuita con
+                herramientas de cálculo actualizadas al nuevo sistema de cotización por ingresos
                 reales para autónomos en España.</p>
         </section>
 
