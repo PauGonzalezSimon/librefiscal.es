@@ -13,9 +13,9 @@
     <link rel="apple-touch-icon" href="/logo-icono.webp">
 
     <!-- Preload para LCP estricto -->
-    
-    
-    
+    <link rel="preload" href="/fonts/font-0.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/font-5.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/logo-icono.webp" as="image" fetchpriority="high">
     <style>
         @font-face {
             font-family: 'Inter';
@@ -312,7 +312,7 @@
     <header class="header-wrapper">
         <div class="site-header">
             <a href="/" class="logo">
-                <img src="data:image/webp;base64,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" alt="Logo LibreFiscal" class="logo-icon-wrapper" width="48" height="48"
+                <img src="/logo-icono.webp" alt="Logo LibreFiscal" class="logo-icon-wrapper" width="48" height="48"
                     fetchpriority="high" loading="eager">
                 <span>LibreFiscal<span class="logo-dot">.</span>es</span>
             </a>
@@ -389,6 +389,37 @@
                         </svg>
                     </a>
                 </div>
+            </div>
+
+            <!-- Información Adicional para AdSense -->
+            <div class="content-enrichment"
+                style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.95rem;">
+                <h3
+                    style="color: var(--text); margin-bottom: 1rem; font-family: 'Montserrat', sans-serif; font-weight: 800;">
+                    El Nuevo Sistema de Cotización 2026</h3>
+                <p style="margin-bottom: 1.5rem;">A partir de 2026, el sistema de cotización para autónomos en España se
+                    consolida bajo el modelo de ingresos reales. Este cambio implica que la cuota de la Seguridad Social
+                    ya no es una elección fija, sino que se ajusta proporcionalmente a los rendimientos netos obtenidos.
+                    Es fundamental utilizar herramientas de cálculo precisas que contemplen los 15 tramos de cotización
+                    actualizados para evitar regularizaciones inesperadas al finalizar el ejercicio fiscal.</p>
+
+                <h3
+                    style="color: var(--text); margin-bottom: 1rem; font-family: 'Montserrat', sans-serif; font-weight: 800;">
+                    Cálculo del Sueldo Neto Real</h3>
+                <p style="margin-bottom: 1.5rem;">Muchos profesionales cometen el error de considerar sus ingresos
+                    brutos como su capacidad de gasto real. En LibreFiscal, nuestras herramientas no solo calculan la
+                    cuota de autónomos, sino que proyectan el impacto del IRPF y los gastos deducibles. Conocer tu
+                    sueldo neto real es el primer paso para una planificación financiera sólida y para entender la
+                    viabilidad real de tu actividad económica en el complejo marco tributario actual.</p>
+
+                <h3
+                    style="color: var(--text); margin-bottom: 1rem; font-family: 'Montserrat', sans-serif; font-weight: 800;">
+                    Privacidad y Compromiso Local</h3>
+                <p>La seguridad de tus datos financieros es nuestra prioridad. A diferencia de otras plataformas,
+                    LibreFiscal no requiere registro ni almacena tus datos en la nube. Todas nuestras calculadoras
+                    ejecutan el procesamiento de forma local en tu navegador. Esto garantiza que tu información fiscal
+                    nunca abandone tu dispositivo, cumpliendo con los más altos estándares de privacidad mientras te
+                    ofrecemos la potencia de un software contable profesional de forma totalmente gratuita.</p>
             </div>
         </section>
     </main>
