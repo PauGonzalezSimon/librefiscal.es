@@ -313,10 +313,6 @@
             window.addEventListener('mousemove', loadAds, { once: true, passive: true });
             window.addEventListener('touchstart', loadAds, { once: true, passive: true });
         });
-        // Service Worker para caché larga duración (fuentes y assets)
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js').catch(function () { });
-        }
     </script>
 </head>
 

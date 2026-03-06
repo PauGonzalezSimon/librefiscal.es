@@ -8,15 +8,17 @@
     <!-- Favicon Corporativo -->
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%231e3a8a' stroke-width='2' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'></path></svg>">
-    
-    
+
+
 
     <!-- Google Fonts CDN -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Montserrat:wght@700;800&display=swap"
+        rel="stylesheet">
     <style>
-:root {
+        :root {
             --primary: #1e3a8a;
             --bg: #f8fafc;
             --card: #ffffff;
@@ -151,75 +153,123 @@
         a.back-btn:hover {
             text-decoration: underline;
         }
+
+        /* ===== FOOTER ===== */
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 2rem 1rem;
+            color: var(--muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            margin: 0 0.5rem;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer .copy {
+            margin-top: 0.5rem;
+        }
     </style>
 
     <!-- Lazy Load AdSense/CMP para PageSpeed 100/100 -->
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        let loaded = false;
-        function loadAds() {
-            if (loaded) return;
-            loaded = true;
-            const script = document.createElement('script');
-            script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX";
-            script.async = true;
-            script.crossOrigin = "anonymous";
-            document.head.appendChild(script);
-        }
-        // Disparar cuando haya interacción real para pasar los test sintéticos
-        window.addEventListener('scroll', loadAds, {once: true, passive: true});
-        window.addEventListener('mousemove', loadAds, {once: true, passive: true});
-        window.addEventListener('touchstart', loadAds, {once: true, passive: true});
-              });
+        document.addEventListener("DOMContentLoaded", function () {
+            let loaded = false;
+            function loadAds() {
+                if (loaded) return;
+                loaded = true;
+                const script = document.createElement('script');
+                script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX";
+                script.async = true;
+                script.crossOrigin = "anonymous";
+                document.head.appendChild(script);
+            }
+            // Disparar cuando haya interacción real para pasar los test sintéticos
+            window.addEventListener('scroll', loadAds, { once: true, passive: true });
+            window.addEventListener('mousemove', loadAds, { once: true, passive: true });
+            window.addEventListener('touchstart', loadAds, { once: true, passive: true });
+        });
     </script>
 </head>
 
 <body>
     <!-- Nuevo Header Corporativo con curva -->
-    <div class="header-wrapper no-print">
-        <header class="site-header">
+    <header class="header-wrapper no-print">
+        <div class="site-header">
             <a href="index.html" class="logo">
                 <div class="logo-icon-wrapper" role="img" aria-label="LibreFiscal.es">
                     <img src="logo-icono.webp" alt="" width="48" height="48">
                 </div>
                 <span>LibreFiscal<span class="logo-dot">.</span>es</span>
             </a>
-        </header>
-        <div class="header-curve">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                preserveAspectRatio="none">
-                <path
-                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                    class="shape-fill"></path>
-            </svg>
-        </div>
+    </header>
+    <div class="header-curve">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                class="shape-fill"></path>
+        </svg>
     </div>
-    <div class="container">
+    </header>
+    <main class="container">
         <div class="card">
             <h1>Política de Cookies</h1>
-<p><strong>1. ¿Qué son las cookies?</strong><br>
-Las cookies son pequeños archivos de texto que las páginas web que visitas instalan en tu terminal (navegador digital local) para hacer más eficiente la experiencia o mostrar contenido personalizado.</p>
+            <p><strong>1. ¿Qué son las cookies?</strong><br>
+                Las cookies son pequeños archivos de texto que las páginas web que visitas instalan en tu terminal
+                (navegador digital local) para hacer más eficiente la experiencia o mostrar contenido personalizado.</p>
 
-<p><strong>2. Cookies utilizadas en este sitio</strong><br>
-Esta web no utiliza cookies propias ni herramientas de analítica (como Google Analytics) orientadas al rastreo de usuarios. Únicamente se emplean cookies de terceros con fines publicitarios:</p>
-<ul>
-    <li><strong>Google AdSense:</strong> Utilizamos los servicios de monetización de Google para la publicación de anuncios. Google y sus proveedores externos asociados utilizan cookies para mostrar anuncios relevantes al usuario basándose en visitas anteriores a esta u otras páginas web, conforme al marco normativo TCF v2.2 de IAB Europe.</li>
-</ul>
+            <p><strong>2. Cookies utilizadas en este sitio</strong><br>
+                Esta web no utiliza cookies propias ni herramientas de analítica (como Google Analytics) orientadas al
+                rastreo de usuarios. Únicamente se emplean cookies de terceros con fines publicitarios:</p>
+            <ul>
+                <li><strong>Google AdSense:</strong> Utilizamos los servicios de monetización de Google para la
+                    publicación de anuncios. Google y sus proveedores externos asociados utilizan cookies para mostrar
+                    anuncios relevantes al usuario basándose en visitas anteriores a esta u otras páginas web, conforme
+                    al marco normativo TCF v2.2 de IAB Europe.</li>
+            </ul>
 
-<p><strong>3. Herramienta de Gestión del Consentimiento (CMP)</strong><br>
-En cumplimiento con las directrices europeas y los mandatos de Google, al entrar por primera vez se muestra un panel central de gestión del consentimiento (CMP). Desde dicho panel, el usuario puede otorgar, denegar o configurar de forma granular el tratamiento de sus datos y el uso de cookies publicitarias.</p>
+            <p><strong>3. Herramienta de Gestión del Consentimiento (CMP)</strong><br>
+                En cumplimiento con las directrices europeas y los mandatos de Google, al entrar por primera vez se
+                muestra un panel central de gestión del consentimiento (CMP). Desde dicho panel, el usuario puede
+                otorgar, denegar o configurar de forma granular el tratamiento de sus datos y el uso de cookies
+                publicitarias.</p>
 
-<p><strong>4. Cómo desactivar las cookies desde el navegador</strong><br>
-El usuario puede bloquear o eliminar las cookies en cualquier momento configurando las opciones de privacidad de su navegador:</p>
-<ul>
-    <li><strong>Google Chrome:</strong> Configuración > Privacidad y seguridad > Cookies y otros datos de sitios.</li>
-    <li><strong>Mozilla Firefox:</strong> Opciones > Privacidad y seguridad > Cookies y datos del sitio.</li>
-    <li><strong>Safari:</strong> Preferencias > Privacidad > Bloquear todas las cookies.</li>
-    <li><strong>Edge:</strong> Configuración > Cookies y permisos del sitio.</li>
-</ul>
-<a href="/" class="back-btn">← Volver al inicio</a>
+            <p><strong>4. Cómo desactivar las cookies desde el navegador</strong><br>
+                El usuario puede bloquear o eliminar las cookies en cualquier momento configurando las opciones de
+                privacidad de su navegador:</p>
+            <ul>
+                <li><strong>Google Chrome:</strong> Configuración > Privacidad y seguridad > Cookies y otros datos de
+                    sitios.</li>
+                <li><strong>Mozilla Firefox:</strong> Opciones > Privacidad y seguridad > Cookies y datos del sitio.
+                </li>
+                <li><strong>Safari:</strong> Preferencias > Privacidad > Bloquear todas las cookies.</li>
+                <li><strong>Edge:</strong> Configuración > Cookies y permisos del sitio.</li>
+            </ul>
+            <a href="/" class="back-btn">← Volver al inicio</a>
         </div>
-    </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="legal-links">
+            <a href="aviso-legal.html">Aviso Legal</a> |
+            <a href="privacidad.html">Política de Privacidad</a> |
+            <a href="cookies.html">Política de Cookies</a>
+        </div>
+        <div class="copy">
+            © 2026 LibreFiscal.es - Todos los derechos reservados.<br>
+            Desarrollado y mantenido por Pablo José González Simón.
+        </div>
+    </footer>
 </body>
 
 </html>

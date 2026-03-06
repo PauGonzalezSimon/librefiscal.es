@@ -153,6 +153,31 @@
         a.back-btn:hover {
             text-decoration: underline;
         }
+
+        /* ===== FOOTER ===== */
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 2rem 1rem;
+            color: var(--muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            margin: 0 0.5rem;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer .copy {
+            margin-top: 0.5rem;
+        }
     </style>
 
     <!-- Lazy Load AdSense/CMP para PageSpeed 100/100 -->
@@ -178,8 +203,8 @@
 
 <body>
     <!-- Nuevo Header Corporativo con curva -->
-    <div class="header-wrapper">
-        <header class="site-header">
+    <header class="header-wrapper">
+        <div class="site-header">
             <a href="index.html" class="logo">
                 <div class="logo-icon-wrapper" role="img" aria-label="LibreFiscal.es">
                     <img src="logo-icono.webp" alt="" width="48" height="48">
@@ -195,8 +220,8 @@
                     class="shape-fill"></path>
             </svg>
         </div>
-    </div>
-    <div class="container">
+    </header>
+    <main class="container">
         <div class="card">
             <h1>Aviso Legal</h1>
 <p><strong>1. Datos Identificativos</strong><br>
@@ -215,7 +240,20 @@ Todos los derechos de propiedad intelectual, lógicos y diseño de la presente p
 El titular no se hace responsable de las posibles discrepancias que puedan existir entre los cálculos orientativos mostrados y los importes finales requeridos por la Agencia Tributaria o la Tesorería General de la Seguridad Social (TGSS), así como tampoco de decisiones particulares que el usuario tome en base a esta herramienta. Es responsabilidad del usuario contrastar su situación tributaria y de seguridad social mediante organismos oficiales o profesionales competentes.</p>
 <a href="/" class="back-btn">← Volver al inicio</a>
         </div>
-    </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="legal-links">
+            <a href="aviso-legal.html">Aviso Legal</a> |
+            <a href="privacidad.html">Política de Privacidad</a> |
+            <a href="cookies.html">Política de Cookies</a>
+        </div>
+        <div class="copy">
+            © 2026 LibreFiscal.es - Todos los derechos reservados.<br>
+            Desarrollado y mantenido por Pablo José González Simón.
+        </div>
+    </footer>
 </body>
 
 </html>
