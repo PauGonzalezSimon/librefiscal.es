@@ -8,22 +8,23 @@
     <!-- Favicon Corporativo -->
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%231e3a8a' stroke-width='2' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'></path></svg>">
-    
-    
+
+
 
     <!-- Google Fonts CDN -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Montserrat:wght@700;800&display=swap"
+        rel="stylesheet">
     <style>
-:root {
-            --primary: #1d4ed8;
-            /* Azul Vibrante Logo */
-            --bg: #ffffff;
-            --card: #ffffff;
-            --text: #0f172a;
-            --muted: #475569;
-            --border: #e2e8f0;
+        :root {
+            --primary: #2563EB;
+            --bg: #0B0F19;
+            --card: #151E2D;
+            --text: #FFFFFF;
+            --muted: #8B949E;
+            --border: #2D3748;
             --radius: 0.75rem;
         }
 
@@ -43,8 +44,9 @@
 
         /* Header Corporativo con separador curvo */
         .header-wrapper {
-            background-color: var(--primary);
-            color: #ffffff;
+            background-color: var(--bg);
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
             margin-bottom: 2rem;
             position: relative;
         }
@@ -55,13 +57,7 @@
         }
 
         .header-curve {
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            width: 100%;
-            overflow: hidden;
-            line-height: 0;
-            transform: rotate(180deg);
+            display: none;
         }
 
         .header-curve svg {
@@ -157,22 +153,22 @@
 
     <!-- Lazy Load AdSense/CMP para PageSpeed 100/100 -->
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        let loaded = false;
-        function loadAds() {
-            if (loaded) return;
-            loaded = true;
-            const script = document.createElement('script');
-            script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX";
-            script.async = true;
-            script.crossOrigin = "anonymous";
-            document.head.appendChild(script);
-        }
-        // Disparar cuando haya interacción real para pasar los test sintéticos
-        window.addEventListener('scroll', loadAds, {once: true, passive: true});
-        window.addEventListener('mousemove', loadAds, {once: true, passive: true});
-        window.addEventListener('touchstart', loadAds, {once: true, passive: true});
-              });
+        document.addEventListener("DOMContentLoaded", function () {
+            let loaded = false;
+            function loadAds() {
+                if (loaded) return;
+                loaded = true;
+                const script = document.createElement('script');
+                script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX";
+                script.async = true;
+                script.crossOrigin = "anonymous";
+                document.head.appendChild(script);
+            }
+            // Disparar cuando haya interacción real para pasar los test sintéticos
+            window.addEventListener('scroll', loadAds, { once: true, passive: true });
+            window.addEventListener('mousemove', loadAds, { once: true, passive: true });
+            window.addEventListener('touchstart', loadAds, { once: true, passive: true });
+        });
     </script>
 </head>
 
@@ -199,21 +195,32 @@
     <div class="container">
         <div class="card">
             <h1>Aviso Legal</h1>
-<p><strong>1. Datos Identificativos</strong><br>
-Titular: Pablo José González Simón<br>
-DNI: 23324173B<br>
-Dirección: Calle Tormes 4, 46190, Ribarroja del Turia, Valencia<br>
-Correo electrónico: pauj2015gs@gmail.com</p>
+            <p><strong>1. Datos Identificativos</strong><br>
+                Titular: Pablo José González Simón<br>
+                DNI: 23324173B<br>
+                Dirección: Calle Tormes 4, 46190, Ribarroja del Turia, Valencia<br>
+                Correo electrónico: pauj2015gs@gmail.com</p>
 
-<p><strong>2. Finalidad de la web</strong><br>
-La presente página web (librefiscal.es) y sus subdominios tienen como finalidad ofrecer una herramienta gratuita de estimación y cálculo de la cuota de la Seguridad Social para trabajadores autónomos en España en base al sistema de ingresos reales aplicable en 2026. Los resultados obtenidos tienen carácter meramente orientativo y formativo, no constituyendo en ningún caso asesoramiento legal, fiscal o laboral vinculante ni una relación contractual.</p>
+            <p><strong>2. Finalidad de la web</strong><br>
+                La presente página web (librefiscal.es) y sus subdominios tienen como finalidad ofrecer una herramienta
+                gratuita de estimación y cálculo de la cuota de la Seguridad Social para trabajadores autónomos en
+                España en base al sistema de ingresos reales aplicable en 2026. Los resultados obtenidos tienen carácter
+                meramente orientativo y formativo, no constituyendo en ningún caso asesoramiento legal, fiscal o laboral
+                vinculante ni una relación contractual.</p>
 
-<p><strong>3. Propiedad intelectual</strong><br>
-Todos los derechos de propiedad intelectual, lógicos y diseño de la presente página son propiedad de Pablo José González Simón o de terceros que han autorizado su uso. Queda terminantemente prohibida la reproducción, distribución o comunicación pública, total o parcial, de los contenidos de esta web sin autorización expresa.</p>
+            <p><strong>3. Propiedad intelectual</strong><br>
+                Todos los derechos de propiedad intelectual, lógicos y diseño de la presente página son propiedad de
+                Pablo José González Simón o de terceros que han autorizado su uso. Queda terminantemente prohibida la
+                reproducción, distribución o comunicación pública, total o parcial, de los contenidos de esta web sin
+                autorización expresa.</p>
 
-<p><strong>4. Exención de responsabilidad</strong><br>
-El titular no se hace responsable de las posibles discrepancias que puedan existir entre los cálculos orientativos mostrados y los importes finales requeridos por la Agencia Tributaria o la Tesorería General de la Seguridad Social (TGSS), así como tampoco de decisiones particulares que el usuario tome en base a esta herramienta. Es responsabilidad del usuario contrastar su situación tributaria y de seguridad social mediante organismos oficiales o profesionales competentes.</p>
-<a href="/" class="back-btn">← Volver al inicio</a>
+            <p><strong>4. Exención de responsabilidad</strong><br>
+                El titular no se hace responsable de las posibles discrepancias que puedan existir entre los cálculos
+                orientativos mostrados y los importes finales requeridos por la Agencia Tributaria o la Tesorería
+                General de la Seguridad Social (TGSS), así como tampoco de decisiones particulares que el usuario tome
+                en base a esta herramienta. Es responsabilidad del usuario contrastar su situación tributaria y de
+                seguridad social mediante organismos oficiales o profesionales competentes.</p>
+            <a href="/" class="back-btn">← Volver al inicio</a>
         </div>
     </div>
 </body>

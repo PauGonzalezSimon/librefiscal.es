@@ -4,24 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LibreFiscal.es — Herramientas Fiscales Gratuitas para Autónomos 2026</title>
+    <title>LibreFiscal.es — Autodefensa Fiscal y Herramientas 2026</title>
     <meta name="description"
-        content="Plataforma gratuita de herramientas fiscales para autónomos en España. Calcula tu cuota con ingresos reales, descubre la Cuota Cero y optimiza tu IRPF.">
+        content="Plataforma de herramientas fiscales y autodefensa. Calcula tu cuota con ingresos reales y protege tu patrimonio frente a Hacienda.">
 
     <!-- Favicon Oficial -->
-    <link rel="icon" type="image/webp" href="/logo-icono.webp">
-    <link rel="apple-touch-icon" href="/logo-icono.webp">
+    <link rel="icon" type="image/webp" href="logo-icono.webp">
+    <link rel="apple-touch-icon" href="logo-icono.webp">
 
     <!-- Preload para LCP estricto -->
-    <link rel="preload" href="/fonts/font-0.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/font-5.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/font-0.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/font-5.woff2" as="font" type="font/woff2" crossorigin>
     <style>
         @font-face {
             font-family: 'Inter';
             font-style: normal;
             font-weight: 400;
             font-display: swap;
-            src: url(/fonts/font-0.woff2) format('woff2');
+            src: url(fonts/font-0.woff2) format('woff2');
         }
 
         @font-face {
@@ -29,19 +29,19 @@
             font-style: normal;
             font-weight: 800;
             font-display: swap;
-            src: url(/fonts/font-5.woff2) format('woff2');
+            src: url(fonts/font-5.woff2) format('woff2');
         }
 
         :root {
-            --primary: #1d4ed8;
-            --primary-hover: #1e40af;
+            --primary: #2563EB;
+            --primary-hover: #1D4ED8;
             --action: #f59e0b;
             --action-hover: #d97706;
-            --bg: #ffffff;
-            --card: #ffffff;
-            --text: #0f172a;
-            --muted: #475569;
-            --border: #e2e8f0;
+            --bg: #0B0F19;
+            --card: #151E2D;
+            --text: #FFFFFF;
+            --muted: #8B949E;
+            --border: #2D3748;
             --radius: 0.75rem;
         }
 
@@ -64,79 +64,168 @@
 
         /* ===== HEADER ===== */
         .header-wrapper {
-            background-color: var(--primary);
-            color: #ffffff;
-            position: relative;
+            background-color: var(--bg);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .site-header {
-            padding: 1.5rem 1rem;
-            text-align: center;
-        }
-
-        .header-curve {
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            width: 100%;
-            overflow: hidden;
-            line-height: 0;
-            transform: rotate(180deg);
-        }
-
-        .header-curve svg {
-            display: block;
-            width: calc(150% + 1.3px);
-            height: 40px;
-        }
-
-        .header-curve .shape-fill {
-            fill: var(--bg);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .site-header .logo {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-weight: 800;
             letter-spacing: -0.025em;
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            gap: 15px;
+            gap: 12px;
             text-decoration: none;
-            position: relative;
-            z-index: 1;
-            color: #ffffff;
+            color: var(--text);
         }
 
         .logo-icon-wrapper {
-            width: 48px;
-            height: 48px;
+            width: 40px;
+            height: 40px;
             flex-shrink: 0;
         }
 
         .logo-dot {
-            color: var(--action);
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
         }
 
         /* ===== HERO ===== */
         .hero {
             text-align: center;
-            padding: 4rem 1rem 2rem;
+            padding: 6rem 1rem 4rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', system-ui, sans-serif;
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: var(--text);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
         }
 
         .hero p {
-            font-size: 1.15rem;
+            font-size: 1.3rem;
             color: var(--muted);
-            max-width: 600px;
-            margin: 0 auto;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+            font-weight: 500;
         }
 
-        /* ===== TOOLS GRID ===== */
+        .hero .btn-cta-main {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--primary);
+            color: #ffffff;
+            padding: 1rem 2rem;
+            border-radius: var(--radius);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .hero .btn-cta-main:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px -5px rgba(37, 99, 235, 0.4);
+        }
+
+        /* ===== TRUST BAR ===== */
+        .trust-bar {
+            text-align: center;
+            padding: 2.5rem 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            background-color: var(--card);
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text);
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .trust-item svg {
+            width: 24px;
+            height: 24px;
+            color: var(--primary);
+        }
+
+        /* ===== SECTION TITLES ===== */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 0 1rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text);
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+
+        .section-header p {
+            color: var(--muted);
+            margin-top: 0.5rem;
+        }
+
+        /* ===== TOOLS SECTION ===== */
         .tools-section {
+            padding: 5rem 1rem 3rem;
             max-width: 900px;
             margin: 0 auto;
-            padding: 1rem 1rem 3rem;
         }
 
         .tool-card {
@@ -144,27 +233,27 @@
             border: 1px solid var(--border);
             border-radius: var(--radius);
             padding: 2.5rem;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
             display: flex;
             align-items: center;
             gap: 2rem;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: transform 0.2s ease, border-color 0.2s ease;
         }
 
         .tool-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 20px 40px -10px rgba(29, 78, 216, 0.12);
+            border-color: var(--primary);
         }
 
         .tool-icon {
             width: 80px;
             height: 80px;
             flex-shrink: 0;
-            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            background: rgba(37, 99, 235, 0.1);
             border-radius: var(--radius);
             display: flex;
             align-items: center;
             justify-content: center;
+            border: 1px solid rgba(37, 99, 235, 0.2);
         }
 
         .tool-info {
@@ -173,84 +262,118 @@
 
         .tool-badge {
             display: inline-block;
-            background: #dcfce7;
-            color: #166534;
+            background: rgba(37, 99, 235, 0.15);
+            color: var(--primary);
             font-size: 0.75rem;
             font-weight: 700;
-            padding: 0.25rem 0.6rem;
+            padding: 0.35rem 0.75rem;
             border-radius: 999px;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(37, 99, 235, 0.3);
         }
 
-        .tool-info h2 {
+        .tool-info h3 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 800;
             color: var(--text);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             letter-spacing: -0.02em;
         }
 
         .tool-info p {
             color: var(--muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.25rem;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
             line-height: 1.6;
         }
 
-        .btn-cta {
+        .tool-action a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: var(--primary);
-            color: #ffffff;
-            padding: 0.85rem 1.75rem;
+            transition: gap 0.2s;
+        }
+
+        .tool-action a:hover {
+            gap: 0.75rem;
+        }
+
+        /* ===== BLOG SECTION ===== */
+        .blog-section {
+            padding: 4rem 1rem 6rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: var(--card);
+            border: 1px solid var(--border);
             border-radius: var(--radius);
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: all 0.2s;
-            box-shadow: 0 4px 6px -1px rgba(29, 78, 216, 0.3);
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-        }
-
-        .btn-cta:hover {
-            background: var(--primary-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 15px -3px rgba(29, 78, 216, 0.4);
-        }
-
-        .btn-cta svg {
-            width: 18px;
-            height: 18px;
-        }
-
-        /* ===== TRUST BAR ===== */
-        .trust-bar {
-            text-align: center;
-            padding: 2rem 1rem;
+            padding: 2rem;
             display: flex;
-            justify-content: center;
-            gap: 2.5rem;
-            flex-wrap: wrap;
+            flex-direction: column;
+            transition: border-color 0.2s;
         }
 
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        .blog-card:hover {
+            border-color: var(--muted);
+        }
+
+        .blog-meta {
+            font-size: 0.8rem;
             color: var(--muted);
-            font-size: 0.9rem;
-            font-weight: 600;
+            font-family: monospace;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
         }
 
-        .trust-item svg {
-            width: 20px;
-            height: 20px;
+        .blog-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .blog-card p {
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .read-more {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.2rem;
+            align-self: flex-start;
+            transition: border-color 0.2s, color 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .read-more:hover {
+            border-color: var(--primary);
             color: var(--primary);
         }
 
@@ -258,40 +381,147 @@
         footer {
             margin-top: auto;
             text-align: center;
-            padding: 2rem 1rem;
+            padding: 3rem 1rem;
             color: var(--muted);
             font-size: 0.9rem;
+            background-color: var(--card);
             border-top: 1px solid var(--border);
         }
 
         footer a {
-            color: var(--primary);
+            color: var(--muted);
             text-decoration: none;
-            margin: 0 0.5rem;
-            font-weight: 600;
+            margin: 0 0.75rem;
+            font-weight: 500;
+            transition: color 0.2s;
         }
 
         footer a:hover {
-            text-decoration: underline;
+            color: var(--text);
         }
 
         footer .copy {
-            margin-top: 0.5rem;
+            margin-top: 1.5rem;
+            font-family: monospace;
         }
 
         /* ===== RESPONSIVE ===== */
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
             .tool-card {
                 flex-direction: column;
                 text-align: center;
                 padding: 2rem 1.5rem;
             }
 
+            .nav-links {
+                display: none;
+            }
+
+            .site-header {
+                justify-content: center;
+            }
+
             .trust-bar {
                 flex-direction: column;
-                gap: 1rem;
-                align-items: center;
+                gap: 1.5rem;
+                padding: 2rem 1rem;
             }
+        }
+
+        /* ===== MODAL ===== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            width: 90%;
+            max-width: 700px;
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .modal-header h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            color: var(--text);
+            margin-right: 2rem;
+            line-height: 1.3;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--muted);
+            cursor: pointer;
+            padding: 0.5rem;
+            margin: -0.5rem;
+            transition: color 0.2s;
+            display: flex;
+        }
+
+        .modal-close:hover {
+            color: var(--text);
+        }
+
+        .modal-body {
+            padding: 2rem;
+            color: var(--muted);
+            line-height: 1.7;
+            overflow-y: auto;
+        }
+
+        .modal-body p {
+            margin-bottom: 1.25rem;
+        }
+
+        .modal-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        .modal-body strong {
+            color: var(--text);
         }
     </style>
 
@@ -322,33 +552,33 @@
 
 <body>
 
-    <!-- Header -->
     <header class="header-wrapper">
         <div class="site-header">
             <a href="/" class="logo">
-                <img src="/logo-icono.webp" alt="" class="logo-icon-wrapper" width="48" height="48"
-                    fetchpriority="high">
+                <img src="logo-icono.png" alt="" class="logo-icon-wrapper" width="40" height="40" fetchpriority="high">
                 <span>LibreFiscal<span class="logo-dot">.</span>es</span>
             </a>
-        </div>
-        <div class="header-curve" aria-hidden="true">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                preserveAspectRatio="none">
-                <path
-                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                    class="shape-fill"></path>
-            </svg>
+            <nav class="nav-links">
+                <a href="#herramientas">Herramientas</a>
+                <a href="#blog">Información</a>
+            </nav>
         </div>
     </header>
 
     <main>
         <!-- Hero -->
         <section class="hero">
-            <h1
-                style="font-size: 1.6rem; font-weight: 800; text-align: center; color: #0f172a; margin-bottom: 1.5rem; line-height: 1.2; letter-spacing: -0.025em; font-family: 'Montserrat', system-ui, sans-serif;">
-                Calculadoras y Herramientas Fiscales 2026</h1>
-            <p>Plataforma gratuita con herramientas de cálculo actualizadas al nuevo sistema de cotización por ingresos
-                reales para autónomos en España.</p>
+            <h1 style="font-size: 4rem;">LIBREFISCAL</h1>
+            <p
+                style="font-size: 1.5rem; color: var(--text); font-weight: 700; margin-bottom: 2.5rem; line-height: 1.4;">
+                HERRAMIENTAS LIBRES.<br>HONESTIDAD SIN CENSURA.<br>PROTECCIÓN DE TU PATRIMONIO.</p>
+            <a href="#herramientas" class="btn-cta-main">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2.5" style="width:20px;height:20px;">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+                Calcula tu cuota real aquí
+            </a>
         </section>
 
         <!-- Trust Bar -->
@@ -357,17 +587,17 @@
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                     stroke-width="2" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
-                100% Gratuito
+                Privacidad Absoluta
             </div>
             <div class="trust-item">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                     stroke-width="2" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
-                Sin registro
+                Fórmulas Oficiales 2026
             </div>
             <div class="trust-item">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -375,33 +605,100 @@
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                Cálculo local en tu navegador
+                Cálculo Local (0 Servidores)
             </div>
         </div>
 
-        <!-- Tools -->
-        <section class="tools-section">
-            <!-- Tool: Calculadora Autónomos -->
+        <!-- Tools Section -->
+        <section id="herramientas" class="tools-section">
+            <div class="section-header">
+                <h2>Herramientas Activas</h2>
+                <p>Calculadoras precisas para optimizar tu carga fiscal.</p>
+            </div>
+
             <div class="tool-card">
                 <div class="tool-icon">
-                    <img src="logo-icono.webp" alt="Calculadora de Autónomos" width="44" height="44"
-                        style="width:44px;height:44px;">
+                    <img src="logo-icono.webp" alt="Calculadora de Autónomos" width="44" height="44">
                 </div>
                 <div class="tool-info">
-                    <span class="tool-badge">Disponible</span>
-                    <h2>Calculadora de Cuota de Autónomos</h2>
-                    <p>Calcula tu cuota mensual exacta con el nuevo sistema de ingresos reales 2026. Incluye los 15
-                        tramos
-                        oficiales, estimación de IRPF, sueldo neto y detección automática de Cuota Cero y Tarifa Plana.
-                    </p>
-                    <a href="https://autonomos.librefiscal.es" class="btn-cta">
-                        Acceder a la herramienta
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                            stroke-width="3" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
-                    </a>
+                    <span class="tool-badge">Actualizado 2026</span>
+                    <h3>Calculadora Cuota Autónomos</h3>
+                    <p>Calcula tu cuota mensual exacta según el nuevo sistema de ingresos reales. Conoce la retención
+                        IRPF, tu sueldo neto y descubre si tienes derecho a la 'Cuota Cero' bonificada al 100%.</p>
+                    <div class="tool-action">
+                        <a href="https://autonomos.librefiscal.es">
+                            Entrar a la Herramienta
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2.5" style="width:20px;height:20px;">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Blog / Info Section -->
+        <section id="blog" class="blog-section">
+            <div class="section-header">
+                <h2>Información y Autodefensa</h2>
+                <p>El conocimiento es tu mejor escudo contra la burocracia institucional.</p>
+            </div>
+
+            <div class="blog-grid">
+                <!-- Articulo 1 -->
+                <article class="blog-card">
+                    <div class="blog-meta">ÚLTIMA HORA // FISCALIDAD</div>
+                    <h3>El nuevo sistema de cotización por Ingresos Reales y Deducciones</h3>
+                    <p>El sistema de libre elección de base ha terminado. Ahora, la cotización se ajusta estrictamente a
+                        tus beneficios reales y es obligatorio prever tus rendimientos.</p>
+                    <a href="javascript:void(0)" class="read-more" onclick="openReport(this)">Desplegar informe</a>
+                    <div class="report-content" style="display: none;">
+                        <p>El sistema de libre elección de base ha terminado. Ahora, la cotización se ajusta
+                            estrictamente a tus beneficios reales (Ingresos brutos menos Gastos deducibles). Es
+                            obligatorio prever estos rendimientos, aplicar las deducciones que correspondan según tu
+                            figura jurídica y ubicarte en el tramo correcto dictado por la Seguridad Social.</p>
+                        <p>Una estimación incorrecta activará una regularización de oficio. Al presentar tu Declaración
+                            de la Renta, si has cotizado por debajo de lo ingresado, se exigirá el abono de la deuda. Si
+                            cotizaste de más, se autorizará una devolución. Se requiere absoluta precisión.</p>
+                    </div>
+                </article>
+
+                <!-- Articulo 2 -->
+                <article class="blog-card">
+                    <div class="blog-meta">ARCHIVOS // AUTÓNOMOS</div>
+                    <h3>Radiografía de las Regularizaciones: Qué ocurre al cerrar el año</h3>
+                    <p>Una estimación incorrecta activará una regularización de oficio en tu contra. Descubre cómo la
+                        Seguridad Social cruzará los datos con Hacienda.</p>
+                    <a href="javascript:void(0)" class="read-more" onclick="openReport(this)">Desplegar informe</a>
+                    <div class="report-content" style="display: none;">
+                        <p>Al tramitar el borrador de la Declaración de la Renta (Modelo 100), la Seguridad Social
+                            calculará de oficio si las cuotas mensuales abonadas fueron equivalentes al rendimiento de
+                            tu actividad.</p>
+                        <p>Si pagaste cuotas inferiores al tramo de tus ganancias fácticas, emitirán una reclamación
+                            exigiendo la diferencia. Si ingresaste de más, ordenarán una devolución de ingresos. Ajustar
+                            tu base a tiempo es vital para evitar descuadres imprevistos en tu liquidez.</p>
+                    </div>
+                </article>
+
+                <!-- Articulo 3 -->
+                <article class="blog-card">
+                    <div class="blog-meta">VÍA DE ESCAPE // NUEVAS ALTAS</div>
+                    <h3>La 'Cuota Cero': Cómo blindar tu cuota de autónomo el primer año</h3>
+                    <p>El sistema ofrece una fisura legal temporal. Varias Comunidades Autónomas asumen los 80€
+                        estatales para que arranques tu negocio pagando 0€.</p>
+                    <a href="javascript:void(0)" class="read-more" onclick="openReport(this)">Desplegar informe</a>
+                    <div class="report-content" style="display: none;">
+                        <p>El sistema ofrece una fisura legal temporal aplicable a nuevas altas o a autónomos que
+                            retoman la actividad tras un largo periodo inactivos.</p>
+                        <p>Varias Comunidades Autónomas (Madrid, Andalucía, Murcia, Baleares, La Rioja, Aragón,
+                            Canarias) ejecutan la llamada <strong>'Cuota Cero'</strong>, asumiendo íntegramente el coste
+                            mensual para que arranques tu negocio pagando 0€ a la Seguridad Social durante al menos tus
+                            primeros doce meses.</p>
+                        <p>Representa un blindaje directo contra la Tarifa Plana estatal de 80€, maximizando la
+                            retención de tu capital en la fase más crítica de la actividad.</p>
+                    </div>
+                </article>
             </div>
         </section>
     </main>
@@ -409,13 +706,60 @@
     <!-- Footer -->
     <footer>
         <div class="legal-links">
-            <a href="aviso-legal.html">Aviso Legal</a> |
-            <a href="privacidad.html">Política de Privacidad</a> |
-            <a href="cookies.html">Política de Cookies</a>
+            <a href="aviso-legal.html">Aviso Legal</a> /
+            <a href="privacidad.html">Privacidad</a> /
+            <a href="cookies.html">Cookies</a>
         </div>
-        <p class="copy">&copy; 2026 librefiscal.es — Todos los derechos reservados.</p>
+        <p class="copy">LIBREFISCAL_2026 // DERECHOS APLICABLES EN VIGOR</p>
     </footer>
 
+    <!-- Modal for Reports -->
+    <div id="infoModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h3 id="modalTitle">Título del Informe</h3>
+                <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Contenido dinámico inyectado por JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        function openReport(element) {
+            const card = element.closest('.blog-card');
+            const title = card.querySelector('h3').innerText;
+            const content = card.querySelector('.report-content').innerHTML;
+
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalBody').innerHTML = content;
+            document.getElementById('infoModal').classList.add('active');
+            document.body.style.overflow = 'hidden'; // Evita que se mueva el fondo
+        }
+
+        function closeModal(event) {
+            // Se llama desde la "X" o al hacer clic fuera del recuadro
+            if (event && event.type === 'click' && !event.target.classList.contains('modal-overlay')) {
+                return;
+            }
+            document.getElementById('infoModal').classList.remove('active');
+            document.body.style.overflow = ''; // Restaura el scroll
+        }
+
+        // Cierra el modal con la tecla Escape
+        document.addEventListener('keydown', function (event) {
+            if (event.key === "Escape" && document.getElementById('infoModal').classList.contains('active')) {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 
 </html>

@@ -33,13 +33,13 @@
         }
 
         :root {
-            --primary: #1d4ed8;
-            --primary-hover: #1e40af;
-            --action: #f59e0b;
-            --bg: #ffffff;
-            --text: #0f172a;
-            --muted: #475569;
-            --border: #e2e8f0;
+            --primary: #2563EB;
+            --primary-hover: #1D4ED8;
+            --bg: #0B0F19;
+            --card: #151E2D;
+            --text: #FFFFFF;
+            --muted: #8B949E;
+            --border: #2D3748;
             --radius: 0.75rem;
         }
 
@@ -62,8 +62,9 @@
 
         /* ===== HEADER ===== */
         .header-wrapper {
-            background-color: var(--primary);
-            color: #ffffff;
+            background-color: var(--bg);
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
             position: relative;
         }
 
@@ -73,23 +74,7 @@
         }
 
         .header-curve {
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            width: 100%;
-            overflow: hidden;
-            line-height: 0;
-            transform: rotate(180deg);
-        }
-
-        .header-curve svg {
-            display: block;
-            width: calc(150% + 1.3px);
-            height: 40px;
-        }
-
-        .header-curve .shape-fill {
-            fill: var(--bg);
+            display: none;
         }
 
         .site-header .logo {
@@ -104,7 +89,7 @@
             text-decoration: none;
             position: relative;
             z-index: 1;
-            color: #ffffff;
+            color: var(--text);
         }
 
         .logo-dot {
@@ -228,7 +213,7 @@
         <div class="error-container">
             <p class="error-code" aria-hidden="true">404</p>
             <h1 class="error-title"
-                style="font-family:'Montserrat',system-ui,sans-serif; font-size:clamp(1.5rem,4vw,2rem); font-weight:800; color:#0f172a; letter-spacing:-0.025em; line-height:1.2;">
+                style="font-family:'Montserrat',system-ui,sans-serif; font-size:clamp(1.5rem,4vw,2rem); font-weight:800; color:var(--text); letter-spacing:-0.025em; line-height:1.2;">
                 Página no encontrada</h1>
             <p class="error-desc">Parece que el enlace que buscas no existe o ha sido movido.</p>
             <a href="/" class="btn-home">
