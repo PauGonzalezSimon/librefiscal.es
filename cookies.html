@@ -19,12 +19,22 @@
         rel="stylesheet">
     <style>
         :root {
+<<<<<<< HEAD
             --primary: #2563EB;
             --bg: #0B0F19;
             --card: #151E2D;
             --text: #FFFFFF;
             --muted: #8B949E;
             --border: #2D3748;
+=======
+            --primary: #1d4ed8;
+            /* Azul Vibrante Logo */
+            --bg: #ffffff;
+            --card: #ffffff;
+            --text: #0f172a;
+            --muted: #475569;
+            --border: #e2e8f0;
+>>>>>>> 2662972056470956b469efa7c07d68abe3b05332
             --radius: 0.75rem;
         }
 
@@ -40,6 +50,7 @@
             color: var(--text);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+<<<<<<< HEAD
         }
 
 
@@ -50,12 +61,43 @@
             border-bottom: 1px solid var(--border);
             color: var(--text);
             margin-bottom: 2rem;
+=======
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Corporativo con separador curvo */
+        .header-wrapper {
+            background-color: var(--primary);
+            color: #ffffff;
+>>>>>>> 2662972056470956b469efa7c07d68abe3b05332
             position: relative;
         }
 
         .site-header {
             padding: 1.5rem 1rem;
             text-align: center;
+        }
+
+        .header-curve {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .header-curve svg {
+            display: block;
+            width: calc(150% + 1.3px);
+            height: 40px;
+        }
+
+        .header-curve .shape-fill {
+            fill: var(--bg);
         }
 
         .site-header .logo {
@@ -152,6 +194,31 @@
         a.back-btn:hover {
             text-decoration: underline;
         }
+
+        /* ===== FOOTER ===== */
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 2rem 1rem;
+            color: var(--muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            margin: 0 0.5rem;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer .copy {
+            margin-top: 0.5rem;
+        }
     </style>
 
     <!-- Lazy Load AdSense/CMP para PageSpeed 100/100 -->
@@ -177,16 +244,16 @@
 
 <body>
     <!-- Nuevo Header Corporativo con curva -->
-    <div class="header-wrapper no-print">
-        <header class="site-header">
+    <header class="header-wrapper">
+        <div class="site-header">
             <a href="index.html" class="logo">
                 <div class="logo-icon-wrapper" role="img" aria-label="LibreFiscal.es">
                     <img src="logo-icono.webp" alt="" width="48" height="48">
                 </div>
                 <span>LibreFiscal<span class="logo-dot">.</span>es</span>
             </a>
-        </header>
-        <div class="header-curve">
+        </div>
+        <div class="header-curve" aria-hidden="true">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
                 preserveAspectRatio="none">
                 <path
@@ -194,8 +261,8 @@
                     class="shape-fill"></path>
             </svg>
         </div>
-    </div>
-    <div class="container">
+    </header>
+    <main class="container">
         <div class="card">
             <h1>Política de Cookies</h1>
             <p><strong>1. ¿Qué son las cookies?</strong><br>
@@ -231,7 +298,20 @@
             </ul>
             <a href="/" class="back-btn">← Volver al inicio</a>
         </div>
-    </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="legal-links">
+            <a href="aviso-legal.html">Aviso Legal</a> |
+            <a href="privacidad.html">Política de Privacidad</a> |
+            <a href="cookies.html">Política de Cookies</a>
+        </div>
+        <div class="copy">
+            © 2026 LibreFiscal.es - Todos los derechos reservados.<br>
+            Desarrollado y mantenido por Pablo José González Simón.
+        </div>
+    </footer>
 </body>
 
 </html>
